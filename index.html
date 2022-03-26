@@ -21,6 +21,7 @@
             let PendingTaskDiv = document.getElementById('pending_task')
             let DoneTaskDiv = document.getElementById('done_task')
             let Task = []
+            let excuses = ["porque el api en heroku no me ha funcionado a la hora de realizar la prueba", "el perro se comió esta tarea", "mi mamá no me deja seguir jugando", "tengo que irme a trabajar a Vicomtech"]
             let Done = []
             let content = ''
             
@@ -54,6 +55,7 @@
             }
 
             function movetoDone(TaskId){
+                let MyExcuse = excuses[Math.floor(Math.random() * excuses.length)];
                 PendingTaskDiv.innerHTML = ""
                 //selecciono elemento
                 let onlyId = TaskId.split("_")[1]
@@ -65,7 +67,6 @@
                 //lo elemino de pending
                 Task.splice(pos, 1);
                 createdivpending()
-                
                 DoneTaskDiv.innerHTML = ""
                 for(var i = 0; i < Done.length; i++){
                     console.log("task leng" + Task.length)
@@ -77,6 +78,7 @@
                     container.append(info)
                     DoneTaskDiv.append(container)
                 };
+                alert("Esta tarea se ha cerrado porque " + MyExcuse);
             }
 
 
