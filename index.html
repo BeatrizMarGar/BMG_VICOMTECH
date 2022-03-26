@@ -8,17 +8,37 @@
             <label for="ShortDescription">Añade una descripción</label>
             <button id="SubmitForm" type="submit"></button>
         </form>
+        <div id="pending_task">
+        </div>
         <script>
             let btn = document.getElementById("SubmitForm")
             let description = document.getElementById("ShortDescription")
-            let newTask = document.getElementById("NewTask")
+            let TaskName = document.getElementById("NewTask")
+            let PendingTaskDiv = document.getElementById('pending_task')
             let Task = []
+            let content = ''
             
             const TaskForm = document.getElementById('TaskForm');
 
             TaskForm.addEventListener('submit', function(event){
                 event.preventDefault();
-                console.log(newTask.value)
+                let TaskInfo = {'name': TaskName.value, 'description': description.value, 'state': 'pending'}
+                Task.push(TaskInfo)
+                PendingTaskDiv.innerHTML = ""
+                for(var i = 0; i < Task.length; i++){
+                    console.log("task leng" + Task.length)
+                    console.log("i " + i)
+                    let container = document.createElement('div')
+                    let info = document.createElement('p')
+                    let info_name = document.createTextNode(Task[i].name)
+                    let btn = document.createElement('button')
+                    let doneBTN = document.createTextNode('marcar como realizada')
+                    info.appendChild(info_name)
+                    btn.appendChild(doneBTN)
+                    container.append(info)
+                    container.append(btn)
+                    PendingTaskDiv.append(container)
+                };
             })
 
         </script>
