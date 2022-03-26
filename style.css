@@ -10,3 +10,8 @@
   .create_form { grid-area: create_form; }
   .pending { grid-area: pending; }
   .done { grid-area: done; }
+
+.border {
+      
+    border: 1px solid #000;
+  }

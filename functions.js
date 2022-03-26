@@ -21,6 +21,7 @@ TaskForm.addEventListener('submit', function(event){
 function createdivpending(){
     for(var i = 0; i < Task.length; i++){
         let container = document.createElement('div')
+        container.setAttribute('class', 'border')
         let info = document.createElement('p')
         let info_name = document.createTextNode(Task[i].name)
         let btn = document.createElement('button')
@@ -49,9 +50,9 @@ function movetoDone(TaskId){
     Task.splice(pos, 1);
     createdivpending()
     DoneTaskDiv.innerHTML = ""
-    
     for(var i = 0; i < Done.length; i++){
         let container = document.createElement('div')
+        container.setAttribute('class', 'border')
         let info = document.createElement('p')
         let info_name = document.createTextNode(Done[i].name)
         info.appendChild(info_name)
