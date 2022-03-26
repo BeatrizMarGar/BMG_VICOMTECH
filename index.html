@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <form id="TaskForm">
+            <input type="text" name="NewTask" id="NewTask">
+            <label for="newTask">Intruduce nueva tarea</label>
+            <input type="text" name="ShortDescription" id="ShortDescription">
+            <label for="ShortDescription">Añade una descripción</label>
+            <button id="SubmitForm" type="submit"></button>
+        </form>
+        <script>
+            let btn = document.getElementById("SubmitForm")
+            let description = document.getElementById("ShortDescription")
+            let newTask = document.getElementById("NewTask")
+            let Task = []
+            
+            const TaskForm = document.getElementById('TaskForm');
+
+            TaskForm.addEventListener('submit', function(event){
+                event.preventDefault();
+                console.log(newTask.value)
+            })
+
+        </script>
+    </body>
+</html>
