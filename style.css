@@ -1,0 +1,12 @@
+.container {
+    display: grid; 
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 25% 75%; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "create_form create_form"
+      "pending done"; 
+  }
+  .create_form { grid-area: create_form; }
+  .pending { grid-area: pending; }
+  .done { grid-area: done; }
